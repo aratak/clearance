@@ -162,4 +162,15 @@ describe Clearance::Configuration do
       expect(Clearance.configuration.routes_enabled?).to be false
     end
   end
+
+  describe '#user_scope' do
+    it 'is nil by default' do
+      expect(Clearance.configuration.user_scope).to be_nil
+    end
+
+    it 'is some value when routes are set to this value' do
+      Clearance.configure { |config| config.user_scope = :blah_id }
+      expect(Clearance.configuration.user_scope).to be :blah_id
+    end
+  end
 end
