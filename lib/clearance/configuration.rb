@@ -12,7 +12,8 @@ module Clearance
       :redirect_url,
       :secure_cookie,
       :sign_in_guards,
-      :user_model
+      :user_model,
+      :user_scope,
 
     def initialize
       @allow_sign_up = true
@@ -24,6 +25,7 @@ module Clearance
       @routes = true
       @secure_cookie = false
       @sign_in_guards = []
+      @user_scope = nil
     end
 
     def user_model
