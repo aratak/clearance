@@ -8,5 +8,4 @@ describe Clearance::User do
     it { is_expected.to validate_uniqueness_of(:email).scoped_to(:company_id) }
   end
 
-
 end
